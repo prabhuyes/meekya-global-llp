@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meekya Global LLP | Premium Food Manufacturing & Trading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ff8f00;
+            --accent: #d32f2f;
+            --light: #f9f9f9;
+            --dark: #333;
+            --gray: #777;
+            --light-gray: #eaeaea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+        
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: relative;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            transform: translate(-10px, -10px);
+        }
+        
+        .logo-icon span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-dark);
+            border-radius: 50%;
+            transform: translate(10px, 10px);
+            z-index: 2;
+        }
+        
+        .logo-icon i {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            z-index: 3;
+            transform: translate(8px, 8px);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: var(--dark);
+            margin-bottom: 4px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after,
+        nav ul li a.active:after { /* Added active state */
+            width: 100%;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active { /* Added active state */
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            /* Updated background image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517865261317-a006c601f07f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative; /* Added for potential video background */
+            overflow: hidden; /* Added for potential video background */
+        }
+
+        .hero video { /* For potential video background */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+
+        .hero .overlay { /* For potential video background */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative; /* To be above video/overlay */
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero-buttons {
+            margin-top: 40px;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .our-values {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .our-values h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .value-item {
+            text-align: center;
+            flex-basis: calc(33% - 20px); /* Adjust for gap */
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-item i {
+            color: var(--secondary); /* Changed icon color to secondary */
+            margin-bottom: 10px;
+            font-size: 2.5rem; /* Increased icon size */
+        }
+
+        .value-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .value-item p {
+            font-size: 0.95em;
+            color: var(--gray);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .service-content p {
+            color: var(--gray);
+        }
+
+        /* Testimonials Section (New) */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow-x: hidden; /* Hide scrollbar for smooth sliding */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 20px;
+            padding-bottom: 20px;
+            justify-content: center; /* Added for alignment */
+            align-items: center; /* Added for vertical alignment */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%; /* Each card takes full width of container */
+            scroll-snap-align: start;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 800px; /* Limit width for larger screens */
+            margin: 0 auto; /* Center the card */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .testimonial-card .client-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card .client-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            background: white;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .product-info p {
+            font-size: 0.95em;
+            color: var(--gray);
+        }
+
+        .view-all-products {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(to right, #1b5e20, #2e7d32);
+            color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start; /* Align icon and text at top */
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary);
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            background-color: rgba(255,255,255,0.9);
+            color: var(--dark);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        #form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+        
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .social-links a {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        .map-container {
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+
+            .testimonial-card {
+                flex: 0 0 90%; /* Adjust for smaller screens */
+            }
+
+            .value-item {
+                flex-basis: calc(48% - 10px); /* Two columns on medium screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap; /* Allow wrapping */
+                justify-content: center; /* Center logo and toggle */
+            }
+
+            .menu-toggle {
+                display: flex;
+                margin-left: auto; /* Push toggle to the right */
+            }
+
+            nav {
+                flex-basis: 100%; /* Take full width */
+                max-height: 0; /* Hidden by default */
+            }
+
+            nav.active {
+                max-height: 300px; /* Expand when active */
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+                align-items: center; /* Center menu items */
+            }
+            
+            nav ul li {
+                margin: 10px 0; /* Vertical spacing */
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr; /* Single column on small screens */
+                text-align: center;
+            }
+
+            .footer-links h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .value-item {
+                flex-basis: 100%; /* Single column on small screens */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-leaf"></i>
+                    <span></span>
+                </div>
+                <div class="logo-text">Meekya <span>Global</span> LLP</div>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Premium Food Manufacturing & Global Trading Solutions</h1>
+            <p>Fueling Global Markets with Wholesome, Sustainably Sourced Food Products and Uncompromising Quality.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="#contact" class="btn btn-outline">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Company</h2>
+                <p>Learn about our journey, mission, and commitment to quality</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Partner in Food Manufacturing & Trading</h3>
+                    <p>Meekya Global LLP is a dynamic Limited Liability Partnership dedicated to the manufacturing, trading, and export of premium food products. We combine traditional recipes with modern production techniques to deliver exceptional quality.</p>
+                    <p>Our state-of-the-art manufacturing facilities adhere to the highest international standards of quality and food safety. We specialize in creating products that meet diverse cultural preferences while maintaining exceptional taste and nutritional value.</p>
+                    <p>As we expand our operations, our focus remains on sustainable practices, ethical sourcing, and building long-term partnerships with clients worldwide. We are driven by a passion for food excellence and a commitment to global well-being.</p>
+                    <div class="our-values">
+                        <h3>Our Core Values</h3>
+                        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+                            <div class="value-item">
+                                <i class="fas fa-seedling"></i>
+                                <h4>Sustainability</h4>
+                                <p>Committed to eco-friendly practices from farm to table, ensuring a greener future.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-award"></i>
+                                <h4>Uncompromising Quality</h4>
+                                <p>Ensuring the highest standards in every product, from sourcing to delivery.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Innovation</h4>
+                                <p>Continuously developing new and exciting food solutions to meet evolving tastes.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Integrity & Trust</h4>
+                                <p>Building lasting relationships through transparency and ethical business practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn" style="margin-top: 30px;">Partner With Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Food Manufacturing Facility with focus on quality control">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for food production and distribution</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Food Manufacturing</h3>
+                        <p>Custom food production using premium ingredients and advanced technology. We specialize in creating products tailored to your specifications and market requirements, adhering to stringent quality controls.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Domestic Trading</h3>
+                        <p>Nationwide distribution network ensuring timely delivery of quality food products to retailers, wholesalers, and food service providers across India, with efficient logistics and supply chain management.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Export Solutions</h3>
+                        <p>Comprehensive export services including documentation, customs clearance, logistics, and compliance with international food safety standards for seamless global distribution to your desired markets.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Private Labeling</h3>
+                        <p>Develop and manufacture products under your own brand, ensuring confidentiality and adherence to your unique specifications and branding guidelines, bringing your vision to market.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Formulations</h3>
+                        <p>Collaborate with our experienced R&D team to create bespoke food products, from concept to commercialization. We turn your innovative ideas into delicious and market-ready realities.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Quality Assurance & Certifications</h3>
+                        <p>Our commitment to excellence is backed by rigorous quality assurance protocols and adherence to global certifications like HACCP, ISO, and FSSAI, guaranteeing safe and superior products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Partners Say</h2>
+                <p>Hear from those who trust Meekya Global LLP</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p>"Meekya Global LLP has been an exceptional partner for our snack food line. Their commitment to quality and timely delivery is unmatched. Highly recommended for any food business!"</p>
+                    <div class="client-name">Rajesh Kumar</div>
+                    <div class="client-title">CEO, Healthy Bites Foods</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"We greatly appreciate Meekya's expertise in custom formulations. They helped us bring a unique beverage to market, exceeding our expectations in taste and nutritional value."</p>
+                    <div class="client-name">Priya Sharma</div>
+                    <div class="client-title">Founder, Nectar Innovations</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Their export services are seamless. Meekya Global LLP handled all the complexities, allowing us to expand our spice distribution effortlessly into new international markets."</p>
+                    <div class="client-name">Ahmed Al-Farsi</div>
+                    <div class="client-title">Director, Spice Route Trading Co.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Product Range</h2>
+                <p>Discover our premium selection of food products crafted for taste and quality</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gourmet Sauces and Condiments, with a focus on fresh ingredients">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artisan Gourmet Sauces</h3>
+                        <p>Exquisite range of sauces, dressings, and marinades, crafted with authentic recipes and premium, natural ingredients for a culinary delight.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1627915220268-07e3725c1285?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Healthy Snack Foods, showing a variety of nuts and dried fruits">
+                    </div>
+                    <div class="product-info">
+                        <h3>Nutritious Snack Innovations</h3>
+                        <p>Wholesome and delicious snack options including baked crisps, protein bars, and fruit & nut mixes, made with no artificial additives for guilt-free indulgence.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Premium Spices and Seasonings, vibrant and aromatic">
+                    </div>
+                    <div class="product-info">
+                        <h3>Exotic Spices & Blends</h3>
+                        <p>Carefully sourced, hand-picked, and expertly processed spices and unique seasoning blends that bring authentic, vibrant flavors to any culinary creation.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Specialty Beverages, including refreshing juices and teas">
+                    </div>
+                    <div class="product-info">
+                        <h3>Revitalizing Specialty Beverages</h3>
+                        <p>Innovative drink solutions including functional beverages, 100% natural juices, organic smoothies, and exotic specialty teas for every palate.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1577741314725-05545214040b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dairy Alternatives, plant-based milk and yogurts">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plant-Based Alternatives</h3>
+                        <p>A growing range of delicious and nutritious plant-based food products, including dairy alternatives and vegan protein sources, for the health-conscious consumer.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1626243453716-4d0f7f3f3f3f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ready-to-Eat Meals, convenient and healthy options">
+                    </div>
+                    <div class="product-info">
+                        <h3>Convenient Ready Meals</h3>
+                        <p>High-quality, chef-inspired ready-to-eat and ready-to-cook meal solutions, offering convenience without compromising on taste or nutritional value.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-products">
+                <a href="#products" class="btn">View All Products</a> </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: #fff;">Get In Touch With Us</h2>
+                <p style="color: #eee;">Reach out to explore partnership opportunities or for any inquiries</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>123 Global Street, Innovation Hub, Bangalore, Karnataka, India - 560001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 97997 95665</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>admin@meekya.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Connect With Us</h4>
+                                <div class="social-links">
+                                    <a href="https://linkedin.com/company/meekya-global-llp" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://facebook.com/meekyaglobal" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="https://instagram.com/meekyaglobal" target="_blank" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.005572573673!2d77.5945622148419!3d12.971598790848008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16766d9f8021%3A0x7d8a6b5a3f3b9f3!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678234567890!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us A Message</h3>
+                    <p style="margin-bottom: 25px;">Ready to collaborate or have a question? Fill out the form below and we'll get back to you shortly.</p>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-links">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                            <span></span>
+                        </div>
+                        <div class="logo-text" style="font-size: 1.5rem;">Meekya <span>Global</span> LLP</div>
+                    </div>
+                    <p style="margin-top: 15px;">Premium food manufacturing, trading, and export solutions with a commitment to quality and sustainability. Driving innovation in the global food industry.</p>
+                    <p style="margin-top: 15px; color: #bbb;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Bangalore, Karnataka, India - 560001</p>
+                    <p style="margin-top: 8px; color: #bbb;"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 97997 95665</p>
+                    <p style="margin-top: 8px; color: #bbb;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> admin@meekya.in</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li> </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Food Manufacturing</a></li>
+                        <li><a href="#">Domestic Trading</a></li>
+                        <li><a href="#">Export Solutions</a></li>
+                        <li><a href="#">Private Labeling</a></li>
+                        <li><a href="#">Custom Formulations</a></li>
+                        <li><a href="#">Quality Assurance</a></li> </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Meekya Global LLP. All Rights Reserved. | Designed for Excellence in Food Production</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links and active state
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mainNav = document.getElementById('main-nav');
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const mainNav = document.getElementById('main-nav');
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        
+        // Form submission handling with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const messageDiv = document.getElementById('form-message');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            messageDiv.style.display = 'none';
+            
+            // Prepare email parameters
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('default_service', 'template_12345', templateParams) // Replace 'template_12345' with your actual EmailJS template ID
+                .then(function(response) {
+                    // Success message
+                    messageDiv.className = 'success';
+                    messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
+                    messageDiv.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Scroll to message
+                    messageDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+                }, function(error) {
+                    // Error message
+                    messageDiv.className = 'error';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error: Failed to send message. Please try again.';
+                    messageDiv.style.display = 'block';
+                    
+                    // Scroll to message
+                    messageDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+                })
+                .finally(function() {
+                    // Restore button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.backgroundColor = 'white';
+            }
+
+            // Highlight active navigation link on scroll
+            const sections = document.querySelectorAll('section');
+            let currentActive = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - header.offsetHeight;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentActive = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentActive)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.service-card, .product-card, .about-image, .value-item, .testimonial-card'); // Added new elements
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.service-card, .product-card, .about-image, .value-item, .testimonial-card'); // Added new elements
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease-out';
+            });
+            
+            // Trigger first check
+            animateOnScroll();
+            
+            // Set current year in footer
+            document.querySelector('.copyright p').innerHTML = 
+                document.querySelector('.copyright p').innerHTML.replace('2023', new Date().getFullYear());
+        });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
